@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+  <div class="col-sm-8 mb-3 mt-3">
+    <div>My Watchlist</div>
+    <div>Money in Wallet: ${{ money_in_wallet }}</div>
+  </div>
+  <div *ngFor="let c of portfolio_companies" class="col-sm-8 mb-3 mt-3">
+    <!-- Card -->
+    <div class="card">
+      <div class="card-header">
+        {{ all_company_data[c["ticker"]]["company"]["name"] }}
+      </div>
+      <div class="card-body">
+        <div class="row justify-content-center">
+          <div class="col-sm-6 mb-3 mt-3">
+            <div style="display: flex; justify-content: space-between">
+              <div>Quantity:</div>
+              <div>{{ c["q"] }}</div>
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <div>Avg. Cost/Share:</div>
+              <div>{{ c["avg_cost"] }}</div>
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <div>Total Cost</div>
+              <div>{{ c["tp"] }}</div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3 mt-3">
+            <div style="display: flex; justify-content: space-between">
+              <div>Change:</div>
+              <div>
+                <i
+                  *ngIf="
+                    c['avg_cost'] -
+                      all_company_data[c['ticker']]['summary']['c'] >
+                    0
+                  "
+                  class="fa-solid fa-caret-up"
+                ></i>
+                <i
+                  *ngIf="
+                    c['avg_cost'] -
+                      all_company_data[c['ticker']]['summary']['c'] <
+                    0
+                  "
+                  class="fa-solid fa-caret-down"
+                ></i>
+                {{
+                  c["avg_cost"] - all_company_data[c["ticker"]]["summary"]["c"]
+                }}
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <div>Current Price:</div>
+              <div>{{ all_company_data[c["ticker"]]["summary"]["c"] }}</div>
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <div>Market Value:</div>
+              <div>
+                {{ all_company_data[c["ticker"]]["summary"]["c"] * c["q"] }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-header" style="display: flex; justify-content: flex-end">
+        <input class="btn btn-primary" type="button" value="Buy" />
+        <input
+          (click)="
+            sellStocks(all_company_data[c['ticker']]['company']['ticker'])
+          "
+          class="btn btn-danger"
+          type="button"
+          value="Sell"
+        />
+      </div>
+    </div>
+    <!-- Card ends -->
+  </div>
+</div>

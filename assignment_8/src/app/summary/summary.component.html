@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-8">
+              <table>
+                <tr>
+                  <td>High price:</td>
+                  <td>{{ companyData["summary"]["h"] }}</td>
+                </tr>
+                <tr>
+                  <td>Low price:</td>
+                  <td>{{ companyData["summary"]["l"] }}</td>
+                </tr>
+                <tr>
+                  <td>Open price:</td>
+                  <td>{{ companyData["summary"]["o"] }}</td>
+                </tr>
+                <tr>
+                  <td>Prev. price:</td>
+                  <td>{{ companyData["summary"]["pc"] }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="row justify-content-center">
+            <div class="col-sm-12" style="text-align: center">
+              About the company
+            </div>
+            <div class="col-sm-12">
+              IPO Start Date: {{ companyData["company"]["ipo"] }}
+            </div>
+            <div class="col-sm-12">
+              Industry: {{ companyData["company"]["finnhubIndustry"] }}
+            </div>
+            <div class="col-sm-12">
+              Webpage:
+              <a [href]="companyData['company']['weburl']">
+                {{ companyData["company"]["weburl"] }}
+              </a>
+            </div>
+            <div class="col-sm-12">
+              Company peers:
+              <span *ngFor="let p of companyData['peers']">
+                {{ p }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">Charts</div>
+  </div>
+</div>

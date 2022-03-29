@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+  <div class="col-sm-8 mb-3 mt-3">
+    <div>My Watchlist</div>
+  </div>
+  <div class="col-sm-8 mb-3 mt-3">
+    <!-- Card -->
+    <div
+      *ngFor="let w of watchlist"
+      style="
+        background-color: #fff;
+        padding: 0px 15px 15px 15px;
+        border: 1px solid #eee;
+        margin-bottom: 10px;
+      "
+    >
+      <div style="display: flex; justify-content: flex-end">
+        <div>
+          <i (click)="handleCross(w)" class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <div>{{ all_company_data[w]["company"]["ticker"] }}</div>
+        <div>{{ all_company_data[w]["summary"]["c"] }}</div>
+      </div>
+      <div
+        style="display: flex; justify-content: space-between; font-size: 12px"
+      >
+        <div>{{ all_company_data[w]["company"]["name"] }}</div>
+        <div>
+          up {{ all_company_data[w]["summary"]["d"] }} ({{
+            all_company_data[w]["summary"]["dp"]
+          }}%)
+        </div>
+      </div>
+    </div>
+    <!-- Card ends -->
+  </div>
+</div>

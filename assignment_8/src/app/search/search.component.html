@@ -1,0 +1,68 @@
+<!-- <input [(value)]="text" (change)="change($event)" /> -->
+<!-- <div *ngFor="let s of suggestions">
+  {{ s }}
+</div> -->
+
+<div class="row justify-content-center">
+  <div class="col-sm-12 mb-3 mt-3">
+    <div style="text-align: center">STOCK SEARCH</div>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-5">
+    <div
+      class="input-group"
+      style="
+        border-radius: 100px;
+        outline: none;
+        background: white;
+        border: 2px solid #4042bf;
+      "
+    >
+      <!-- <input
+        type="text"
+        class="form-control search-form border-0"
+        style="border-radius: 100px"
+        placeholder="Enter stock ticker symbol"
+      /> -->
+      <input
+        type="text"
+        class="form-control search-form border-0"
+        style="border-radius: 100px"
+        placeholder="Enter stock ticker symbol"
+        [matAutocomplete]="auto"
+        (input)="logit($event)"
+        (blur)="searchit($event)"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option
+          *ngFor="let suggestion of suggestions"
+          [value]="suggestion.symbol"
+        >
+          {{ suggestion.symbol }} | {{ suggestion.description }}
+        </mat-option>
+      </mat-autocomplete>
+      <span class="input-group-btn">
+        <button
+          type="submit"
+          class="btn search-btn"
+          data-target="#search-form"
+          name="q"
+          (click)="handleSearch()"
+        >
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <span class="input-group-btn">
+        <button
+          type="submit"
+          class="btn search-btn"
+          data-target="#search-form"
+          name="q"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- <app-details *ngIf="showDetails"></app-details> -->

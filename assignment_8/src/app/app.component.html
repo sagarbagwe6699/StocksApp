@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>Assignment 8</title>
+  </head>
+  <body
+    style="
+      background: url('../assets/images/background-graph.jpg');
+      height: 100vh;
+    "
+  >
+    <!-- <img src="../assets/images/background-graph.jpg" alt="" /> -->
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="padding: 0px 10px; background: #4042bf; color: #ffffff"
+    >
+      <a class="navbar-brand" href="#">Stock Search</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- List of tabs -->
+      <div
+        class="collapse navbar-collapse"
+        style="justify-content: flex-end"
+        id="navbarText"
+      >
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/search">
+              Search
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/watchlist"> Watchlist </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/portfolio"> Portfolio </a>
+          </li>
+        </ul>
+      </div>
+      <!-- List of tabs ends -->
+    </nav>
+    <!-- Navbar ends -->
+
+    <!-- Routing -->
+    <div class="container">
+      <!-- <app-search></app-search> -->
+      <!-- <app-watchlist></app-watchlist> -->
+      <!-- <app-portfolio></app-portfolio> -->
+      <!-- <app-details></app-details> -->
+      <router-outlet></router-outlet>
+    </div>
+    <!-- Rounting ends here -->
+
+    <!-- <footer
+      style="
+        background: #c3c3c3;
+        width: 100%;
+        text-align: center;
+        bottom: 0px;
+        position: absolute;
+      "
+    >
+      Powered by FinnHub.io
+    </footer> -->
+  </body>
+</html>

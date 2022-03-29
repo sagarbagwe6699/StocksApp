@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" style="text-align: center">Social Sentiments</div>
+  </div>
+  <div class="row justify-content-center">
+    <table style="width: 50%">
+      <tr>
+        <th>{{ insights["ticker"] }}</th>
+        <th>Reddit</th>
+        <th>Twitter</th>
+      </tr>
+      <tr>
+        <td>Total Mentions</td>
+        <td>{{ insights["reddit"]["Total"] }}</td>
+        <td>{{ insights["twitter"]["Total"] }}</td>
+      </tr>
+      <tr>
+        <td>Positive Mentions</td>
+        <td>{{ insights["reddit"]["Positive"] }}</td>
+        <td>{{ insights["twitter"]["Positive"] }}</td>
+      </tr>
+      <tr>
+        <td>Negative Mentions</td>
+        <td>{{ insights["reddit"]["Negative"] }}</td>
+        <td>{{ insights["twitter"]["Negative"] }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">Recommendation Trends</div>
+    <div class="col-sm-6">Historical EPS Surprises</div>
+  </div>
+</div>

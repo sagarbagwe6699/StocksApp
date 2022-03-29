@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px #bcbcbc;
+    transition: all ease 0.3s;
+}
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        margin-bottom: 10px;
+        display: none;
+        transition: all ease 0.3s;
+        opacity: 0;
+    }
+
+    .card:hover {
+        transform: scale(1.1); 
+    }

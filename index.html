@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card" onmouseover="showContent()" onmouseout="hideContent()">
+            <div class="title">
+                Lorem, ipsum dolor.
+            </div>
+            <div class="content" id="card-content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam quis fugiat natus neque incidunt? Ab?
+            </div>
+            <div class="footer">
+                <a href="#">
+                    See more
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showContent(){
+            var content = document.getElementById("card-content")
+            setTimeout(() => {
+                content.style.opacity = '1'
+            }, 80)
+            content.style.display = 'block'
+        }
+
+        function hideContent(){
+            var content = document.getElementById("card-content")
+            setTimeout(() => {
+                content.style.opacity = '0'
+            }, 80)
+            content.style.display = 'none'
+        }
+    </script>
+</body>
+</html>
